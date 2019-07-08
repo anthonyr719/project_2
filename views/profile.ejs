@@ -1,0 +1,31 @@
+<h1>Hello, <%= currentUser.name %></h1>
+<h5>Here, you can manage your favorited events</h5>
+
+<% favorites.forEach( function( fav ){ %>
+
+    <div class="media">
+
+        <div class="media-left media-middle">
+
+            <a href="<%= fav.url %>" target="_blank">
+                <img class="media-object" src="<%= fav.img %>" alt="event promotional image" width="64" height="64">
+            </a>
+        </div>
+        <div class="media-body">
+
+            <h4 class="media-heading"><a href="<%= fav.url %>" target="_blank"><%= fav.title %></a></h4>
+
+            <form method="post" action="/events/<%= fav.eventid %>/?_method=DELETE&redirect=/profile">
+
+                <button type="submit" class="btn btn-danger" style="width:100%;max-width:250px;">Remove Event From Favorites</button>
+            </form>
+
+            <form method="post" action="/events/<%= fav.eventid %>/?_method=PUT" style="margin-top:15px">
+
+                <label for="eventnotes">Your Event Notes</label>
+                <textarea id="eventnotes" class="form-control" name="notes" placeholder="add some notes.."><%= fav.notes %></textarea>
+                <button type="submit" class="btn btn-info" style="width:100%;max-width:250px;margin-top:5px;">Edit Notes to Favorite</button>
+            </form>
+        </div>
+    </div>
+<% }) %>

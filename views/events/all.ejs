@@ -1,0 +1,75 @@
+<h1>
+    <%= events.length %> events found
+    <% if( city ){ %> in <%= city %> <% } %>
+</h1>
+
+<div>
+
+    <form method="get" action="/events/all">
+
+        <div class="form-group">
+
+            <label for="cityname">City Name</label>
+            <input name="cityname" id="cityname" type="text" class="form-control" placeholder="Search City" value="<%= city %>">
+        </div>
+
+        <button type="submit" class="btn btn-default">Search Events</button>
+    </form>
+</div>
+
+<% if( error ) { %>
+
+    <p style="color:red"><%= error %></p>
+<% } %>
+
+
+<div class="row" style="margin-top: 45px" >
+
+    <div class="col-sm-12">
+
+        <% events.forEach( function( event ) { %>
+
+        <div class="media <%= myFavorites.includes( event.id ) ? 'already-favorited' : '' %> ">
+
+            <div class="media-left media-middle">
+
+                <a href="<%= event.url %>" target="_blank">
+                    <% if( event.logo ){ %>
+
+                        <img class="media-object" src="<%= event.logo.url %>" alt="event promotional image" width="64" height="64">
+                    <% } else { %>
+
+                        <img class="media-object" src="https://via.placeholder.com/64" alt="event had no image" width="64" height="64">
+                    <% } %>
+                </a>
+            </div>
+            <div class="media-body">
+
+                <h4 class="media-heading"><a href="<%= event.url %>" target="_blank"><%= event.name.text %></a></h4>
+
+                <%if( myFavorites.includes( event.id ) ){ %>
+
+                    <form method="post" action="/events/<%= event.id %>/?_method=DELETE&redirect=/events/all">
+
+                        <button type="submit" class="btn btn-danger" style="width:100%;max-width:250px;">Remove Event From Favorites</button>
+                    </form>
+                <% } else { %>
+
+                    <form method="post" action="/events/add">
+
+                        <input name="eventname" class="hidden" value="<%= event.name.text %>">
+                        <% if( event.logo ){ %>
+
+                            <input name="eventimg" class="hidden" value="<%= event.logo.url %>">
+                        <% } %>
+                        <input name="eventlink" class="hidden" value="<%= event.url %>">
+                        <input name="eventid" class="hidden" value="<%= event.id %>">
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;max-width:250px;">Add Event To Favorites</button>
+                    </form>
+                <% } %>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
