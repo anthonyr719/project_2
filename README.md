@@ -8,11 +8,13 @@ Node/Express/Sequelize/Javascript/ HTML/CSS/API Interface/Boostrap/Authenticatio
 
 ## Planning/Development Journal
 
-
+My first priority was to retrieve the API date. I needed to see what information I would be able to display to my users. After getting the data I had to decide what how the user would see the data as well as what the user would be able to do with the data. The next step was thinking out my database tables for my app. The user data and the events data worked out to be enough for what I needed to do with the overall app. After creating the plan for how the app would be setup, I worked on establishing my routes and making sure the CRUD requirements would be met. There were moments where I needed to stop and think out each step that the app would allow for the users and what was needed to make each step work. Overall this ended up being a challenging but rewarding experience. 
+[photos]
 
 ## Remaining Issues/Bugs
 
-
+Right now the app is working fine. I would be interested in finishing up some styling to make the app look a little nicer. 
 
 ## Future Add-ons/Features
-  
+
+As I was working on the app I did have some cool ideas about what the users experiences could be in the future. I want to add a function where users can tag and sort their events. I also would like to be able to sort the list of events by category. 
