@@ -1,27 +1,18 @@
-# Express Authentication
+# Event Favoriter
 
-Express authentication template using Passport + flash messages + custom middleware
+The Event Favoriter app allows user to search for local events and add their favorite events to their profile list. The user must login to create their list, but once they start to build a favorites list they will be able to stay up to date with exciting and interesting events. Each event that is sent to the profile "Favorites" list also displays a text box for users to include notes or reminders for each event.
 
-## Getting Started
+## Technologies Used
 
-#### Scaffold w/tests (see `master` branch)
+Node/Express/Sequelize/Javascript/ HTML/CSS/API Interface/Boostrap/Authentication/Postgres
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Change the database names in `config/config.json` to reflect your project
-  * Run `createdb project_name_development` to create the development database
-  * Run `createdb project_name_test` to create the test database
+## Planning/Development Journal
 
-#### Finished version (see `brian-finished` branch)
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Run `createdb express_auth_development` to create the development database
-  * Run `createdb express_auth_test` to create the test database
-  * Run `sequelize db:migrate` to run migrations
+
+## Remaining Issues/Bugs
+
+
+
+## Future Add-ons/Features
+  
